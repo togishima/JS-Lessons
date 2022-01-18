@@ -1,3 +1,10 @@
+window.addEventListener('load', () => {
+    const parent = document.querySelector('#js-target-ul');
+    const child = createElementWithText('li', 'これです');
+
+    parent.appendChild(child);
+});
+
 /**
  * @param {string} tagName
  * @param {string} text
@@ -9,8 +16,3 @@ const createElementWithText = (tagName, text) => {
 
     return element;
 }
-
-const parent = document.querySelector('#js-target-ul');
-const child = createElementWithText('li', 'これです');
-
-parent.appendChild(child);
