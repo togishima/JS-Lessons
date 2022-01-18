@@ -1,6 +1,16 @@
-const parent = document.querySelector('#js-target-ul');
-const child = document.createElement('li');
+/**
+ * @param {string} tagName
+ * @param {string} text
+ * @returns HTMLElement
+ */
+const createElementWithText = (tagName, text) => {
+    element = document.createElement(tagName);
+    element.textContent = text;
 
-child.textContent = 'これです';
+    return element;
+}
+
+const parent = document.querySelector('#js-target-ul');
+const child = createElementWithText('li', 'これです');
 
 parent.appendChild(child);
