@@ -23,23 +23,27 @@ const linkItem = (href, linkText, imageSrc, altText) => {
     return li;
 }
 
-const data = [
-    {
-        to: "bookmark.html",
-        img: "1.png",
-        alt: "画像1",
-        text: "ブックマーク"
-    },
-    {
-        to: "message.html",
-        img: "2.png",
-        alt: "画像2",
-        text: "メッセージ"
-    }
-];
+const promiseMock = new Promise((resolve) => {
+    resolve([
+        {
+            to: "bookmark.html",
+            img: "1.png",
+            alt: "画像1",
+            text: "ブックマーク"
+        },
+        {
+            to: "message.html",
+            img: "2.png",
+            alt: "画像2",
+            text: "メッセージ"
+        }
+    ])
+});
 
 const ul = document.getElementById("app");
-data.forEach((data) => {
-    link = linkItem(data.to, data.img, data.alt, data.text);
-    ul.appendChild(link);
+promiseMock.then((list) => {
+    list.forEach(data => {
+        link = linkItem(data.to, data.text, data.img, data.alt);
+        ul.appendChild(link);
+    });
 });
