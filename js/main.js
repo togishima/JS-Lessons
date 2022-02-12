@@ -23,22 +23,23 @@ const linkItem = (href, linkText, imageSrc, altText) => {
     return li;
 }
 
-const promiseMock = new Promise((resolve) => {
+const promiseMock = new Promise((resolve, reject) => {
     setTimeout(() => {
-        resolve([
-            {
-                to: "1.html",
-                img: "img/bookmark.png",
-                alt: "画像1",
-                text: "ブックマーク"
-            },
-            {
-                to: "2.html",
-                img: "img/message.png",
-                alt: "画像2",
-                text: "メッセージ"
-            }
-        ])
+        reject('エラー発生')
+        // resolve([
+        //     {
+        //         to: "1.html",
+        //         img: "img/bookmark.png",
+        //         alt: "画像1",
+        //         text: "ブックマーク"
+        //     },
+        //     {
+        //         to: "2.html",
+        //         img: "img/message.png",
+        //         alt: "画像2",
+        //         text: "メッセージ"
+        //     }
+        // ])
     }, 3000);
 });
 
@@ -52,4 +53,6 @@ promiseMock.then((list) => {
         link = linkItem(data.to, data.text, data.img, data.alt);
         ul.appendChild(link);
     });
+}).catch((error) => {
+    console.log(error);
 });
