@@ -14,7 +14,7 @@ const linkItem = (href, linkText, imageSrc, altText) => {
     a.text = linkText;
 
     const img = document.createElement("img");
-    img.src = imageSrc;
+    img.src = "img/"+imageSrc;
     img.alt = altText;
 
     a.appendChild(img);
@@ -27,14 +27,14 @@ const promiseMock = new Promise((resolve) => {
     setTimeout(() => {
         resolve([
             {
-                to: "bookmark.html",
-                img: "1.png",
+                to: "1.html",
+                img: "bookmark.png",
                 alt: "画像1",
                 text: "ブックマーク"
             },
             {
-                to: "message.html",
-                img: "2.png",
+                to: "2.html",
+                img: "message.png",
                 alt: "画像2",
                 text: "メッセージ"
             }
