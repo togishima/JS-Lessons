@@ -24,20 +24,22 @@ const linkItem = (href, linkText, imageSrc, altText) => {
 }
 
 const promiseMock = new Promise((resolve) => {
-    resolve([
-        {
-            to: "1.html",
-            img: "img/bookmark.png",
-            alt: "画像1",
-            text: "ブックマーク"
-        },
-        {
-            to: "2.html",
-            img: "img/message.png",
-            alt: "画像2",
-            text: "メッセージ"
-        }
-    ])
+    setTimeout(() => {
+        resolve([
+            {
+                to: "1.html",
+                img: "img/bookmark.png",
+                alt: "画像1",
+                text: "ブックマーク"
+            },
+            {
+                to: "2.html",
+                img: "img/message.png",
+                alt: "画像2",
+                text: "メッセージ"
+            }
+        ])
+    }, 3000);
 });
 
 const ul = document.getElementById("app");
