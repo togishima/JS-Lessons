@@ -44,6 +44,10 @@ const promiseMock = new Promise((resolve) => {
 
 const ul = document.getElementById("app");
 promiseMock.then((list) => {
+    document.querySelectorAll(".loading-icon").forEach((icon) => {
+        icon.remove();
+    });
+
     list.forEach(data => {
         link = linkItem(data.to, data.text, data.img, data.alt);
         ul.appendChild(link);
