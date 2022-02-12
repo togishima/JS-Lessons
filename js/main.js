@@ -26,14 +26,14 @@ const linkItem = (href, linkText, imageSrc, altText) => {
 const promiseMock = new Promise((resolve) => {
     resolve([
         {
-            to: "bookmark.html",
-            img: "1.png",
+            to: "1.html",
+            img: "img/bookmark.png",
             alt: "画像1",
             text: "ブックマーク"
         },
         {
-            to: "message.html",
-            img: "2.png",
+            to: "2.html",
+            img: "img/message.png",
             alt: "画像2",
             text: "メッセージ"
         }
