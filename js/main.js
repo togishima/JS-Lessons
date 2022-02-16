@@ -1,8 +1,8 @@
 /**
  * Generates Li tag with image link
- * @param {*} href
- * @param {*} linkText
- * @param {*} imageSrc
+ * @param {string} href
+ * @param {string} linkText
+ * @param {string} imageSrc
  * @returns HTMLElement
  */
 const listItem = (href, linkText, imageSrc) => {
